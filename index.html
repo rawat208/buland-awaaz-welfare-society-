@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buland Awaaz Welfare Society — Be the Voice. Be the Change.</title>
+<meta name="description" content="Buland Awaaz Welfare Society is a non-profit working on education for the poor, fighting unemployment and protecting the environment, since 2 October 2015.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cloth:#FFFCF6;
+    --cloth-dim:#FCE8D4;
+    --ink:#241C12;
+    --ink-soft:#6E6153;
+    --forest:#FF9933;
+    --forest-deep:#7A3300;
+    --turmeric:#138808;
+    --indigo:#0E6B08;
+    --radius:3px;
+    --max:1180px;
+    --shadow: 0 10px 26px -12px rgba(122,51,0,0.35);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--cloth);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  img,svg{display:block; max-width:100%;}
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+    color:var(--forest-deep);
+  }
+
+  a{color:inherit; text-decoration:none;}
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--indigo);
+  }
+
+  /* divider element  */
+  .stitch{
+    height:2px;
+    background:var(--forest);
+    opacity:0.5;
+    width:100%;
+  }
+  .stitch--v{
+    width:2px;
+    background:var(--forest);
+    opacity:0.5;
+    height:100%;
+  }
+  .stitch--gold{
+    background:var(--turmeric);
+  }
+
+  /* reveal on scroll  */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+
+  /* NAV  */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(244,239,225,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid #F1C89A;
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 32px;
+    max-width:var(--max); margin:0 auto;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Fraunces', serif; font-weight:600; font-size:19px;
+    color:var(--forest-deep);
+  }
+  .brand-mark{width:34px; height:34px; flex-shrink:0; border-radius:50%; object-fit:cover;}
+  .nav-links{display:flex; gap:30px; list-style:none;}
+  .nav-links a{
+    font-size:14px; font-weight:600;
+    color:var(--ink-soft);
+    position:relative;
+    padding-bottom:3px;
+  }
+  .nav-links a:hover{color:var(--forest);}
+  .nav-cta{
+    background:var(--forest);
+    color:var(--cloth);
+    font-size:13px; font-weight:700;
+    padding:11px 20px;
+    border-radius:var(--radius);
+    letter-spacing:0.02em;
+  }
+  .nav-cta:hover{background:var(--forest-deep);}
+  .nav-toggle{display:none; background:none; border:none; cursor:pointer; padding:6px;}
+  .nav-toggle span{display:block; width:24px; height:2px; background:var(--ink); margin:5px 0;}
+
+  @media (max-width:860px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--cloth);
+      flex-direction:column; gap:0;
+      border-bottom:1px solid #F1C89A;
+      max-height:0; overflow:hidden;
+      transition:max-height .3s ease;
+    }
+    .nav-links.open{max-height:420px;}
+    .nav-links a{display:block; padding:16px 32px; border-top:1px solid var(--cloth-dim);}
+    .nav-cta{display:none;}
+    .nav-toggle{display:block;}
+  }
+
+  /* HERO  */
+  .hero{
+    padding:88px 0 70px;
+    position:relative;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:60px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(38px, 5.4vw, 62px);
+    margin:20px 0 24px;
+  }
+  .hero-lede{
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin-bottom:14px;
+  }
+  .hero-meta{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-bottom:30px;
+  }
+  .pillars{
+    display:flex; gap:12px; flex-wrap:wrap;
+    margin-bottom:34px;
+  }
+  .pillar-tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px; font-weight:600; letter-spacing:.05em; text-transform:uppercase;
+    border:1.5px solid var(--forest);
+    color:var(--forest-deep);
+    padding:7px 14px;
+    border-radius:999px;
+    transition:background .2s ease, color .2s ease;
+  }
+  .pillar-tag:hover{background:var(--forest); color:var(--cloth);}
+  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 24px;
+    font-size:14px; font-weight:700;
+    border-radius:var(--radius);
+    cursor:pointer;
+    border:2px solid var(--forest);
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  }
+  .btn-solid{background:var(--forest); color:var(--cloth);}
+  .btn-solid:hover{background:var(--forest-deep); border-color:var(--forest-deep); transform:translateY(-3px); box-shadow:var(--shadow);}
+  .btn-outline{background:transparent; color:var(--forest-deep);}
+  .btn-outline:hover{background:var(--forest); color:var(--cloth); transform:translateY(-3px); box-shadow:var(--shadow);}
+
+  .hero-art{position:relative; display:flex; align-items:center; justify-content:center;}
+  .hero-logo-wrap{
+    position:relative;
+    width:280px; height:280px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .hero-logo-wrap::before{
+    content:"";
+    position:absolute; inset:-16px;
+    border-radius:50%;
+    border:2px solid var(--forest);
+    opacity:0.55;
+    animation: spin 22s linear infinite;
+  }
+  .hero-logo-wrap::after{
+    content:"";
+    position:absolute; inset:0;
+    border-radius:50%;
+    box-shadow:0 0 0 0 rgba(255,153,51,0.45);
+    animation: pulseRing 2.6s ease-out infinite;
+  }
+  .hero-logo{
+    width:100%; height:100%;
+    object-fit:contain;
+    border-radius:50%;
+    position:relative; z-index:2;
+    box-shadow:0 18px 40px -14px rgba(122,51,0,0.45);
+    animation: floatLogo 4s ease-in-out infinite, popIn .8s ease forwards;
+  }
+  @keyframes floatLogo{0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);}}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  @keyframes pulseRing{
+    0%{box-shadow:0 0 0 0 rgba(255,153,51,0.45);}
+    70%{box-shadow:0 0 0 34px rgba(255,153,51,0);}
+    100%{box-shadow:0 0 0 0 rgba(255,153,51,0);}
+  }
+  @keyframes popIn{from{opacity:0; transform:scale(.85);} to{opacity:1; transform:scale(1);}}
+  @media (prefers-reduced-motion: reduce){
+    .hero-logo, .hero-logo-wrap::before, .hero-logo-wrap::after{animation:none;}
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr; gap:40px;}
+    .hero-art{order:-1;}
+    .hero-logo-wrap{width:220px; height:220px;}
+  }
+
+  /* Vision & Mission */
+  .vision-mission{
+    padding:0 0 70px;
+  }
+  .vm-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  .vm-card{
+    background:var(--forest-deep);
+    color:var(--cloth);
+    border-radius:var(--radius);
+    padding:34px;
+  }
+  .vm-card .eyebrow{color:var(--turmeric);}
+  .vm-text{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    line-height:1.45;
+    margin-top:16px;
+  }
+  .vm-text strong{color:var(--turmeric);}
+  @media (max-width:760px){
+    .vm-grid{grid-template-columns:1fr;}
+  }
+
+  /* SECTION SHELL */
+  section{padding:86px 0;}
+  .section-head{max-width:640px; margin-bottom:50px;}
+  .section-head h2{font-size:clamp(28px,3.6vw,40px); margin-top:16px;}
+  .section-head p{color:var(--ink-soft); margin-top:16px; font-size:16px;}
+
+  .band-dark{background:var(--forest-deep); color:var(--cloth);}
+  .band-dark h2, .band-dark h3{color:var(--cloth);}
+  .band-dark .eyebrow{color:var(--turmeric);}
+  .band-dark .section-head p{color:#C9CFC3;}
+
+  /* About: objectives */
+  .objectives{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+    border-top:1px solid #F1C89A;
+  }
+  .objective{
+    padding:32px 28px;
+    border-right:1px solid #F1C89A;
+  }
+  .objective:last-child{border-right:none;}
+  .objective-num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px; font-weight:700; color:var(--turmeric);
+    margin-bottom:14px; display:block;
+  }
+  .objective h3{font-size:20px; margin-bottom:10px;}
+  .objective p{color:var(--ink-soft); font-size:15px;}
+
+  @media (max-width:860px){
+    .objectives{grid-template-columns:repeat(2,1fr);}
+    .objective:nth-child(2){border-right:none;}
+    .objective:nth-child(3){border-right:none;}
+    .objective{border-bottom:1px solid #F1C89A;}
+  }
+  @media (max-width:560px){
+    .objectives{grid-template-columns:1fr;}
+  }
+
+  /* Approach timeline */
+  .approach{
+    margin-top:64px;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:8px; flex-wrap:wrap;
+  }
+  .approach-step{
+    text-align:center; flex:1; min-width:120px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
+  }
+  .approach-dot{
+    width:14px; height:14px; border-radius:50%;
+    background:var(--forest);
+    margin:0 auto 12px;
+  }
+  .approach-line{flex:1; height:2px; min-width:24px;
+    background:var(--forest);
+    opacity:0.4;
+    margin-top:-30px;
+  }
+  @media (max-width:700px){
+    .approach{flex-direction:column; align-items:flex-start;}
+    .approach-line{width:2px; height:34px; margin:0 0 0 6px;
+      background:var(--forest); opacity:0.4;}
+  }
+
+  /* Programs / Green Projects */
+  .programs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:36px;
+  }
+  .program-card{
+    background:var(--cloth-dim);
+    border:1px solid #F1C89A;
+    border-radius:var(--radius);
+    padding:38px;
+    position:relative;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .program-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow);
+  }
+  .program-card::before{
+    content:"";
+    position:absolute; top:0; left:0; right:0; height:3px;
+    background:var(--forest);
+  }
+  .program-num{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--indigo); font-weight:700; letter-spacing:.06em;}
+  .program-card h3{font-size:26px; margin:12px 0 6px;}
+  .program-kicker{font-size:14px; font-weight:600; color:var(--turmeric); margin-bottom:16px;}
+  .program-card p{color:var(--ink-soft); font-size:15px; margin-bottom:18px;}
+  .program-card ul{list-style:none; margin-bottom:20px;}
+  .program-card li{
+    font-size:14.5px; color:var(--ink);
+    padding:7px 0 7px 20px;
+    position:relative;
+  }
+  .program-card li::before{
+    content:"•"; position:absolute; left:0; color:var(--forest); font-weight:700;
+  }
+  .program-quote{
+    font-family:'Fraunces', serif;
+    font-style:italic; font-weight:500;
+    font-size:16px; color:var(--forest-deep);
+    border-left:3px solid var(--turmeric);
+    padding-left:14px;
+  }
+  @media (max-width:860px){.programs{grid-template-columns:1fr;}}
+
+  /* Gallery */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,280px));
+    gap:24px;
+    justify-content:center;
+  }
+  .gallery-item{
+    background:var(--cloth-dim);
+    border:1px solid #F1C89A;
+    border-radius:var(--radius);
+    overflow:hidden;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .gallery-item:hover{transform:translateY(-6px); box-shadow:var(--shadow);}
+  .gallery-item img{
+    width:100%; height:260px;
+    object-fit:cover;
+    object-position:top center;
+    display:block;
+  }
+  .gallery-item figcaption{
+    padding:14px 16px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px; font-weight:600; letter-spacing:.03em;
+    color:var(--forest-deep);
+  }
+
+  /* Events */
+  .events-list{display:flex; flex-direction:column; gap:0;}
+  .event-item{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:24px;
+    padding:24px 0;
+    border-bottom:1px solid #F1C89A;
+  }
+  .event-item:first-child{padding-top:0;}
+  .event-date{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px; font-weight:700; color:var(--forest);
+    letter-spacing:.03em;
+  }
+  .event-item h3{font-size:19px; margin-bottom:6px;}
+  .event-item p{color:var(--ink-soft); font-size:14.5px;}
+  .events-empty{color:var(--ink-soft); font-size:14.5px; font-style:italic;}
+  @media (max-width:600px){
+    .event-item{grid-template-columns:1fr; gap:6px;}
+  }
+
+  /* Admin panel */
+  .admin-trigger{
+    background:none; border:none; color:#6B6B60; font-size:12px;
+    cursor:pointer; font-family:'JetBrains Mono', monospace;
+    text-decoration:underline; padding:0;
+  }
+  .admin-overlay{
+    position:fixed; inset:0; background:rgba(20,15,8,0.6);
+    z-index:200; display:none; align-items:flex-start; justify-content:center;
+    padding:40px 16px; overflow-y:auto;
+  }
+  .admin-overlay.open{display:flex;}
+  .admin-panel{
+    background:var(--cloth); border-radius:var(--radius);
+    width:100%; max-width:760px; padding:30px; margin-bottom:40px;
+  }
+  .admin-panel h2{font-size:22px; margin-bottom:6px;}
+  .admin-close{
+    float:right; background:none; border:none; font-size:22px; cursor:pointer; color:var(--ink-soft);
+    line-height:1;
+  }
+  .admin-tabs{display:flex; gap:8px; margin:18px 0; flex-wrap:wrap;}
+  .admin-tab{
+    font-family:'JetBrains Mono', monospace; font-size:12.5px; font-weight:600;
+    padding:9px 14px; border-radius:999px; border:1.5px solid var(--forest);
+    background:transparent; color:var(--forest-deep); cursor:pointer;
+  }
+  .admin-tab.active{background:var(--forest); color:var(--cloth);}
+  .admin-section{display:none;}
+  .admin-section.active{display:block;}
+  .admin-list-item{
+    display:flex; justify-content:space-between; align-items:center; gap:10px;
+    padding:12px 14px; background:var(--cloth-dim); border-radius:var(--radius);
+    margin-bottom:8px; font-size:14px;
+  }
+  .admin-list-item .name{font-weight:600; color:var(--forest-deep);}
+  .admin-list-item .meta{font-size:12px; color:var(--ink-soft); display:block;}
+  .admin-del{
+    background:#B3261E; color:#fff; border:none; border-radius:var(--radius);
+    padding:6px 12px; font-size:12px; cursor:pointer; flex-shrink:0;
+  }
+  .admin-form{
+    background:var(--cloth-dim); padding:18px; border-radius:var(--radius); margin-top:16px;
+  }
+  .admin-form label{
+    display:block; font-family:'JetBrains Mono', monospace; font-size:11.5px; font-weight:600;
+    color:var(--forest-deep); margin:10px 0 4px;
+  }
+  .admin-form input, .admin-form textarea, .admin-form select{
+    width:100%; padding:10px 12px; border:1.5px solid #E3C48D; border-radius:var(--radius);
+    font-family:'Work Sans', sans-serif; font-size:14px; background:var(--cloth);
+  }
+  .admin-add-btn{
+    margin-top:14px; background:var(--forest); color:var(--cloth); border:none;
+    padding:11px 20px; border-radius:var(--radius); font-weight:700; font-size:13.5px; cursor:pointer;
+  }
+  .admin-pw-box{max-width:320px; margin:0 auto; text-align:center;}
+  .admin-pw-box input{margin:14px 0; text-align:center;}
+  .admin-note{font-size:12px; color:var(--ink-soft); margin-top:16px; font-family:'JetBrains Mono', monospace;}
+  .mission-visual{
+    width:100%; height:200px;
+    background:var(--cloth);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .mission-visual svg{width:120px; height:120px;}
+
+  /* Join Us cards */
+  .join-grid{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin-bottom:56px;
+  }
+  .join-card{
+    background:var(--cloth);
+    border:1.5px solid var(--forest);
+    border-radius:var(--radius);
+    padding:22px 18px;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  }
+  .join-card:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow);
+    background:#fff8ec;
+  }
+  .join-card h4{font-family:'Fraunces',serif; font-size:17px; color:var(--forest-deep); margin-bottom:8px;}
+  .join-card p{font-size:13.5px; color:var(--ink-soft);}
+  @media (max-width:960px){.join-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.join-grid{grid-template-columns:1fr;}}
+
+  .together-row{
+    display:flex; flex-wrap:wrap; gap:12px;
+  }
+  .together-tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px; font-weight:600; letter-spacing:.03em;
+    background:var(--forest); color:var(--cloth);
+    padding:9px 16px; border-radius:999px;
+  }
+
+  /* volunteer subsection */
+  .volunteer-block{
+    margin-top:90px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .vol-tags{display:flex; flex-wrap:wrap; gap:10px;}
+  .vol-tag{
+    font-size:13.5px;
+    border:1px solid #F1C89A;
+    color:var(--ink);
+    padding:8px 13px;
+    border-radius:999px;
+  }
+  .vol-side p{color:var(--ink-soft); font-size:15px; margin-bottom:18px;}
+  .vol-side strong{color:var(--forest-deep);}
+  @media (max-width:860px){.volunteer-block{grid-template-columns:1fr;}}
+
+  /* Join / Volunteer form */
+  .join-form-wrap{
+    margin-top:70px;
+    background:var(--cloth-dim);
+    border:1px solid #F1C89A;
+    border-radius:var(--radius);
+    padding:40px;
+  }
+  .join-form-head h2{font-size:28px;}
+  .join-form{margin-top:26px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:18px;}
+  .form-field{display:flex; flex-direction:column; gap:6px; margin-bottom:18px;}
+  .form-field label{
+    font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:600;
+    letter-spacing:.03em; color:var(--forest-deep);
+  }
+  .form-field input, .form-field select, .form-field textarea{
+    font-family:'Work Sans', sans-serif; font-size:15px;
+    padding:12px 14px;
+    border:1.5px solid #E3C48D;
+    border-radius:var(--radius);
+    background:var(--cloth);
+    color:var(--ink);
+    outline:none;
+    transition:border-color .2s ease;
+  }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus{
+    border-color:var(--forest);
+  }
+  .form-field textarea{resize:vertical;}
+  .form-ctas{display:flex; gap:16px; flex-wrap:wrap; margin-top:8px;}
+  @media (max-width:640px){
+    .join-form-wrap{padding:26px 20px;}
+    .form-row{grid-template-columns:1fr; gap:0;}
+  }
+
+  /* Team */
+  .team-lead{
+    display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:44px;
+  }
+  .lead-card{
+    background:var(--cloth-dim);
+    border:1px solid #F1C89A;
+    border-radius:var(--radius);
+    padding:34px;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .lead-card:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow);
+  }
+  .lead-card--photo{display:flex; gap:24px; align-items:flex-start;}
+  .lead-photo{
+    width:96px; height:96px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:top center;
+    border:3px solid var(--forest);
+    flex-shrink:0;
+  }
+  @media (max-width:480px){
+    .lead-card--photo{flex-direction:column; align-items:center; text-align:center;}
+  }
+  .lead-role{
+    font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700;
+    color:var(--turmeric); letter-spacing:.08em; text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .lead-card h3{font-size:23px; margin-bottom:4px;}
+  .lead-org{font-size:13.5px; color:var(--ink-soft); margin-bottom:16px;}
+  .lead-card p{font-size:15px; color:var(--ink-soft);}
+  @media (max-width:860px){.team-lead{grid-template-columns:1fr;}}
+  .team-note{
+    border-top:1px solid #F1C89A;
+    padding-top:28px;
+    max-width:70ch;
+  }
+  .team-note p{color:var(--ink-soft); font-size:15px; margin-bottom:10px;}
+  .team-note p strong{color:var(--forest-deep);}
+
+  /* Contact */
+  .contact-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:56px;
+  }
+  .contact-card{
+    background:rgba(244,239,225,0.06);
+    border:1px solid rgba(244,239,225,0.25);
+    border-radius:var(--radius);
+    padding:30px;
+  }
+  .contact-card h3{font-size:18px; margin-bottom:16px;}
+  .info-row{
+    display:flex; justify-content:space-between; gap:14px;
+    padding:7px 0;
+    font-size:14.5px;
+  }
+  .info-row span:first-child{color:#B9C0AF;}
+  .info-row .fill{color:#B9C0AF; font-style:italic;}
+  .partner-tags{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;}
+  .partner-tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px; font-weight:600;
+    border:1px solid rgba(244,239,225,0.35);
+    color:var(--cloth);
+    padding:7px 12px; border-radius:999px;
+  }
+  .contact-note{
+    margin-top:16px; font-size:12.5px; color:#98A08E;
+    font-family:'JetBrains Mono', monospace;
+  }
+  @media (max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+
+  .closing-line{
+    text-align:center; margin-top:64px;
+    font-family:'Fraunces', serif; font-style:italic; font-weight:500;
+    font-size:clamp(19px,2.4vw,26px);
+    color:var(--turmeric);
+  }
+
+  /* FOOTER */
+  footer{
+    background:var(--ink);
+    color:#B9B4A4;
+    padding:44px 0 28px;
+  }
+  .footer-row{
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:20px;
+    padding-bottom:24px;
+    border-bottom:1px solid #3A362C;
+  }
+  .footer-brand{font-family:'Fraunces',serif; color:var(--cloth); font-size:18px; font-weight:600;}
+  .footer-links{display:flex; gap:22px; list-style:none; flex-wrap:wrap;}
+  .footer-links a{font-size:13.5px;}
+  .footer-links a:hover{color:var(--cloth);}
+  .footer-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    padding-top:20px; font-size:12.5px;
+  }
+
+  /* tighter small-screen spacing */
+  @media (max-width:600px){
+    .wrap{padding:0 20px;}
+    .nav{padding:14px 20px;}
+    section{padding:60px 0;}
+    .hero{padding:56px 0 46px;}
+    .program-card, .lead-card{padding:26px 22px;}
+    .contact-card{padding:24px 20px;}
+    .join-grid{gap:12px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#home" class="brand">
+      <img src="logo.jpg" alt="Buland Awaaz Welfare Society logo" class="brand-mark">
+      Buland Awaaz
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#programs">Green Projects</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#join">Join &amp; Volunteer</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#join" class="nav-cta">Become a Volunteer</a>
+  </nav>
+</header>
+
+<!-- HOME / HERO -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Gurugram, Haryana · Est. 2 October 2015</span>
+      <h1>Be the voice.<br>Be the change.</h1>
+      <p class="hero-lede">Buland Awaaz Welfare Society is a non-profit social organization founded by Shri Kuldeep Hindustani, committed to the social, educational, economic and environmental development of society.</p>
+      <p class="hero-meta">EMPOWERING COMMUNITIES · CREATING OPPORTUNITIES · PROTECTING THE ENVIRONMENT</p>
+      <div class="pillars">
+        <span class="pillar-tag">Education</span>
+        <span class="pillar-tag">Employment</span>
+        <span class="pillar-tag">Environment</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="#join" class="btn btn-solid">Become a Volunteer</a>
+        <a href="#programs" class="btn btn-outline">See our work</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-logo-wrap">
+        <img src="logo.jpg" alt="Buland Awaaz Welfare Society logo" class="hero-logo">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION & MISSION -->
+<section class="vision-mission">
+  <div class="wrap">
+    <div class="vm-grid reveal">
+      <div class="vm-card">
+        <span class="eyebrow">Our Vision</span>
+        <p class="vm-text">To build an educated, empowered and environmentally responsible society where communities come together to create a sustainable and inclusive future.</p>
+      </div>
+      <div class="vm-card">
+        <span class="eyebrow">Our Mission</span>
+        <p class="vm-text">To design and implement community-oriented initiatives in the areas of <strong>education, employment awareness and environmental protection</strong>, while encouraging active citizen participation and sustainable practices.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">About Us</span>
+      <h2>Who we are</h2>
+      <p>Established on 2 October 2015, Buland Awaaz Welfare Society is a social organization committed to creating positive and sustainable change in society. Founded by Shri Kuldeep Hindustani, the organization works for the betterment of underprivileged communities, promotes opportunities and contributes towards environmental protection.</p>
+      <p style="margin-top:12px;">We believe education creates empowerment, employment creates economic independence, and environmental responsibility creates a sustainable future — so our programs are built around awareness, participation, collaboration and action at the grassroots level.</p>
+    </div>
+
+    <div class="objectives reveal">
+      <div class="objective">
+        <span class="objective-num">01</span>
+        <h3>Education for the Poor</h3>
+        <p>We believe every child deserves access to education and the opportunity to build a better future. We support initiatives that promote educational awareness and opportunities for underprivileged communities.</p>
+      </div>
+      <div class="objective">
+        <span class="objective-num">02</span>
+        <h3>Fight Against Unemployment</h3>
+        <p>We contribute towards economic empowerment by encouraging skill development, employment awareness, entrepreneurship and opportunities for sustainable livelihoods.</p>
+      </div>
+      <div class="objective">
+        <span class="objective-num">03</span>
+        <h3>Protect the Environment</h3>
+        <p>We promote environmental responsibility through awareness campaigns, sustainable alternatives, waste reduction and initiatives aimed at reducing plastic pollution.</p>
+      </div>
+    </div>
+
+    <div class="approach reveal">
+      <div class="approach-step"><div class="approach-dot"></div>Awareness</div>
+      <div class="approach-line"></div>
+      <div class="approach-step"><div class="approach-dot"></div>Participation</div>
+      <div class="approach-line"></div>
+      <div class="approach-step"><div class="approach-dot"></div>Action</div>
+      <div class="approach-line"></div>
+      <div class="approach-step"><div class="approach-dot"></div>Impact</div>
+    </div>
+  </div>
+</section>
+
+<!-- GREEN PROJECTS -->
+<section id="programs" style="background:var(--cloth-dim);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Programs</span>
+      <h2>Building a greener, more sustainable future</h2>
+      <p>Environmental protection is a collective responsibility. Our green initiatives focus on creating awareness and encouraging sustainable alternatives that can become part of everyday life.</p>
+    </div>
+
+    <div class="programs reveal" id="programsGrid"></div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Events</span>
+      <h2>What we've been up to</h2>
+      <p>Community drives, awareness campaigns and celebrations run by Buland Awaaz Welfare Society.</p>
+    </div>
+    <div class="events-list reveal" id="eventsList"></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Gallery</span>
+      <h2>Our album</h2>
+      <p>A look at the missions and moments from Buland Awaaz Welfare Society.</p>
+    </div>
+    <div class="gallery-grid reveal" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- JOIN US + VOLUNTEER -->
+<section id="join">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Get Involved</span>
+      <h2>Join the movement for positive change</h2>
+      <p>Social change is strongest when people work together. We invite individuals, students, professionals, institutions, businesses, RWAs, community organizations and NGOs to join hands with us.</p>
+    </div>
+
+    <div class="join-grid reveal">
+      <div class="join-card"><h4>Volunteer</h4><p>Contribute your time, skills and ideas.</p></div>
+      <div class="join-card"><h4>Community Partner</h4><p>Help us connect with communities and local stakeholders.</p></div>
+      <div class="join-card"><h4>Institutional Partner</h4><p>Collaborate on education and environmental initiatives.</p></div>
+      <div class="join-card"><h4>Corporate Partner</h4><p>Support impactful social and environmental programs.</p></div>
+      <div class="join-card"><h4>Campaign Partner</h4><p>Create awareness and encourage responsible citizenship.</p></div>
+    </div>
+
+    <div class="reveal">
+      <div class="together-row">
+        <span class="together-tag">Educate Communities</span>
+        <span class="together-tag">Create Opportunities</span>
+        <span class="together-tag">Promote Sustainability</span>
+        <span class="together-tag">Protect the Environment</span>
+        <span class="together-tag">Build a Better Future</span>
+      </div>
+    </div>
+
+    <div class="volunteer-block reveal">
+      <div>
+        <span class="eyebrow">Become a Volunteer</span>
+        <h2 style="margin-top:16px; font-size:30px;">Your time. Your skills. Your impact.</h2>
+        <p style="color:var(--ink-soft); margin-top:16px; font-size:15px;">Volunteering is an opportunity to turn your concern for society into meaningful action. Volunteers help us reach communities, organize awareness activities, support environmental campaigns and spread our message to a wider audience.</p>
+        <p style="color:var(--ink-soft); margin-top:16px; font-size:15px;">Volunteer with us in:</p>
+        <div class="vol-tags" style="margin-top:14px;">
+          <span class="vol-tag">Education &amp; Community Outreach</span>
+          <span class="vol-tag">Environmental Awareness</span>
+          <span class="vol-tag">Plastic Reduction Campaigns</span>
+          <span class="vol-tag">Kapda Thaila Bank Activities</span>
+          <span class="vol-tag">Bio Carry Bags Awareness</span>
+          <span class="vol-tag">School &amp; College Programs</span>
+          <span class="vol-tag">Community Events</span>
+          <span class="vol-tag">Digital &amp; Social Media Awareness</span>
+          <span class="vol-tag">Event Coordination</span>
+          <span class="vol-tag">Documentation &amp; Communication</span>
+          <span class="vol-tag">Fundraising &amp; Partnerships</span>
+        </div>
+      </div>
+      <div class="vol-side">
+        <p><strong>Who can volunteer?</strong><br>Anyone who believes in creating positive social change — students, professionals, entrepreneurs, homemakers, senior citizens and community members.</p>
+        <p><strong>Why volunteer?</strong> Learn. Connect. Contribute. Lead.<br>Volunteering gives you an opportunity to develop new skills, meet like-minded people and contribute directly to causes that matter.</p>
+        <p style="font-family:'Fraunces',serif; font-style:italic; color:var(--forest-deep); font-size:16px;">Your contribution may be small, but together our collective impact can be transformational.</p>
+        <a href="#contact" class="btn btn-solid" style="margin-top:10px;">Become a Volunteer</a>
+      </div>
+    </div>
+
+    <div class="join-form-wrap reveal" id="join-form">
+      <div class="join-form-head">
+        <span class="eyebrow">Join Us</span>
+        <h2 style="margin-top:16px; font-size:28px;">Fill this form to join or volunteer</h2>
+        <p style="color:var(--ink-soft); margin-top:12px; font-size:15px;">Submitting opens WhatsApp with your details pre-filled, sent directly to our team at +91 95999 59886. You can also call us directly.</p>
+      </div>
+      <form class="join-form" id="volunteerForm">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="jf-name">Full Name *</label>
+            <input type="text" id="jf-name" required placeholder="Your name">
+          </div>
+          <div class="form-field">
+            <label for="jf-phone">Phone / WhatsApp *</label>
+            <input type="tel" id="jf-phone" required placeholder="10-digit mobile number">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="jf-city">City</label>
+            <input type="text" id="jf-city" placeholder="Your city">
+          </div>
+          <div class="form-field">
+            <label for="jf-role">I want to join as *</label>
+            <select id="jf-role" required>
+              <option value="">Select an option</option>
+              <option>Volunteer</option>
+              <option>Member</option>
+              <option>Community Partner</option>
+              <option>Institutional Partner</option>
+              <option>Corporate Partner</option>
+              <option>Campaign Partner</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="jf-message">Message (optional)</label>
+          <textarea id="jf-message" rows="3" placeholder="Tell us how you'd like to contribute"></textarea>
+        </div>
+        <div class="form-ctas">
+          <button type="submit" class="btn btn-solid">Send via WhatsApp</button>
+          <a href="tel:+919599959886" class="btn btn-outline">Call +91 95999 59886</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" style="background:var(--cloth-dim);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Leadership</span>
+      <h2>Our leadership</h2>
+      <p>Strong organizations are built by people who believe in a shared vision and work consistently towards it.</p>
+    </div>
+
+    <div class="team-lead reveal" id="membersGrid"></div>
+
+    <div class="team-note reveal">
+      <p><strong>Our Volunteers &amp; Partners</strong></p>
+      <p>Our organization is strengthened by a growing network of volunteers, supporters, institutions and community partners. Every individual who contributes time, skills, resources or ideas becomes an important part of the Buland Awaaz family.</p>
+      <p style="font-family:'Fraunces',serif; font-style:italic; color:var(--forest-deep);">Together, we turn commitment into action and action into impact.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="band-dark">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Contact Us</span>
+      <h2>Let's create an impact together</h2>
+      <p>Have an idea? Want to volunteer? Interested in partnering with us or supporting our environmental initiatives? We would be happy to connect with you.</p>
+    </div>
+
+    <div class="contact-grid reveal">
+      <div class="contact-card">
+        <h3>Get in touch</h3>
+        <div class="info-row"><span>Organization</span><span>Buland Awaaz Welfare Society</span></div>
+        <div class="info-row"><span>Based in</span><span>Gurugram, Haryana</span></div>
+        <div class="info-row"><span>Established</span><span>2 October 2015</span></div>
+        <div class="info-row"><span>Founder</span><span>Kuldeep Hindustani</span></div>
+        <div class="info-row"><span>Vice President</span><span>Prinka Yadav</span></div>
+        <div class="info-row"><span>Phone</span><span>+91 95999 59886</span></div>
+        <div class="info-row"><span>Address</span><span>H.No. 2535/31, Swaroop Garden, Near Anushthan Vatika, Gurugram, Haryana – 122001</span></div>
+        <div class="info-row"><span>Email</span><span class="fill">to be added</span></div>
+        <p class="contact-note">// add official email before publishing</p>
+      </div>
+      <div class="contact-card">
+        <h3>We welcome collaborations with</h3>
+        <div class="partner-tags">
+          <span class="partner-tag">Corporates &amp; CSR Foundations</span>
+          <span class="partner-tag">Schools &amp; Colleges</span>
+          <span class="partner-tag">Government &amp; Local Bodies</span>
+          <span class="partner-tag">NGOs &amp; Community Organizations</span>
+          <span class="partner-tag">RWAs &amp; Market Associations</span>
+          <span class="partner-tag">Environmental Organizations</span>
+          <span class="partner-tag">Social Entrepreneurs</span>
+          <span class="partner-tag">Individual Supporters</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="closing-line reveal">Together for a Better Society. Together for a Greener Future.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <span class="footer-brand">Buland Awaaz Welfare Society</span>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#programs">Green Projects</a></li>
+        <li><a href="#join">Join &amp; Volunteer</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Buland Awaaz Welfare Society</span>
+      <span>Empowering Communities · Creating Opportunities · Protecting the Environment · <button class="admin-trigger" id="adminTrigger">Admin</button></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ADMIN PANEL -->
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-panel">
+    <button class="admin-close" id="adminClose">&times;</button>
+    <div id="adminLoginView">
+      <div class="admin-pw-box">
+        <h2>Admin Login</h2>
+        <p style="font-size:13px; color:var(--ink-soft);">Sign in with the admin email and password to manage this site's content for everyone.</p>
+        <input type="email" id="adminEmailInput" placeholder="Admin email" autocomplete="username">
+        <input type="password" id="adminPwInput" placeholder="Password" autocomplete="current-password">
+        <button class="admin-add-btn" id="adminPwSubmit">Login</button>
+        <p class="admin-note" id="adminPwError" style="color:#B3261E;"></p>
+      </div>
+    </div>
+    <div id="adminMainView" style="display:none;">
+      <h2>Manage Site Content</h2>
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-tab="events">Events</button>
+        <button class="admin-tab" data-tab="members">Members</button>
+        <button class="admin-tab" data-tab="programs">Programs</button>
+        <button class="admin-tab" data-tab="gallery">Gallery</button>
+      </div>
+
+      <div class="admin-section active" id="adminEvents">
+        <div id="adminEventsList"></div>
+        <div class="admin-form">
+          <label>Date (e.g. 5 June 2026)</label>
+          <input type="text" id="evDate">
+          <label>Title</label>
+          <input type="text" id="evTitle">
+          <label>Description</label>
+          <textarea id="evDesc" rows="2"></textarea>
+          <button class="admin-add-btn" id="evAdd">Add Event</button>
+        </div>
+      </div>
+
+      <div class="admin-section" id="adminMembers">
+        <div id="adminMembersList"></div>
+        <div class="admin-form">
+          <label>Name</label>
+          <input type="text" id="mName">
+          <label>Role (e.g. Founder / Vice President / Member)</label>
+          <input type="text" id="mRole">
+          <label>Bio</label>
+          <textarea id="mBio" rows="2"></textarea>
+          <label>Photo</label>
+          <input type="file" id="mPhoto" accept="image/*">
+          <button class="admin-add-btn" id="mAdd">Add Member</button>
+        </div>
+      </div>
+
+      <div class="admin-section" id="adminPrograms">
+        <div id="adminProgramsList"></div>
+        <div class="admin-form">
+          <label>Title</label>
+          <input type="text" id="pTitle">
+          <label>Kicker line</label>
+          <input type="text" id="pKicker">
+          <label>Description</label>
+          <textarea id="pDesc" rows="2"></textarea>
+          <label>Objectives (one per line)</label>
+          <textarea id="pObjectives" rows="4"></textarea>
+          <label>Closing quote</label>
+          <input type="text" id="pQuote">
+          <button class="admin-add-btn" id="pAdd">Add Program</button>
+        </div>
+      </div>
+
+      <div class="admin-section" id="adminGallery">
+        <div id="adminGalleryList"></div>
+        <div class="admin-form">
+          <label>Caption</label>
+          <input type="text" id="gCaption">
+          <label>Photo</label>
+          <input type="file" id="gPhoto" accept="image/*">
+          <button class="admin-add-btn" id="gAdd">Add to Gallery</button>
+        </div>
+      </div>
+
+      <p class="admin-note" id="adminSyncNote">Changes save to this browser only and are visible only on this device (no shared server).</p>
+      <button class="admin-add-btn" id="adminLogout" style="background:#6B6B60; margin-top:10px;">Log out</button>
+    </div>
+  </div>
+</div>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script>
+ 
+  var firebaseConfig = {
+    apiKey: "AIzaSyB2UjtpEbja0LVrgUwo4eiMVSy5Sgoiq1g",
+    authDomain: "buland-awaaz-wellfare-society.firebaseapp.com",
+    projectId: "buland-awaaz-wellfare-society",
+    storageBucket: "buland-awaaz-wellfare-society.firebasestorage.app",
+    messagingSenderId: "848525562264",
+    appId: "1:848525562264:web:db97b6fb70615c3ffcdbed"
+  };
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore();
+  var auth = firebase.auth();
+</script>
+
+<script>
+  // mobile nav toggle
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    links.classList.toggle('open');
+  });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ links.classList.remove('open'); }
+  });
+
+  // reveal on scroll
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // volunteer / join form -> WhatsApp
+  var volForm = document.getElementById('volunteerForm');
+  if(volForm){
+    volForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('jf-name').value.trim();
+      var phone = document.getElementById('jf-phone').value.trim();
+      var city = document.getElementById('jf-city').value.trim();
+      var role = document.getElementById('jf-role').value;
+      var message = document.getElementById('jf-message').value.trim();
+
+      var text = "Hi Buland Awaaz Welfare Society, I'd like to join.\n\n";
+      text += "Name: " + name + "\n";
+      text += "Phone: " + phone + "\n";
+      if(city){ text += "City: " + city + "\n"; }
+      text += "Interested as: " + role + "\n";
+      if(message){ text += "Message: " + message + "\n"; }
+
+      var url = "https://wa.me/919599959886?text=" + encodeURIComponent(text);
+      window.open(url, '_blank');
+    });
+  }
+
+
+  // ================= CMS: Events / Members / Programs / Gallery (Firebase Firestore) =================
+  var COLLECTIONS = { events: 'events', members: 'members', programs: 'programs', gallery: 'gallery' };
+
+  var DEFAULT_EVENTS = [
+    { date: '14 Dec 2020', title: 'Kapda Thaila Bank Launch', desc: 'Launched with the Municipal Corporation of Gurugram (MCG) \u2014 Haryana\'s first cloth bag bank.' },
+    { date: 'World Environment Day', title: 'Polythene Free Gurugram Drive', desc: 'Awareness drive encouraging shopkeepers and residents to switch to cloth bags.' },
+    { date: 'Annual', title: 'Slum School Annual Day', desc: 'Celebrating the year\'s learning with children from the Buland Awaaz Slum School.' }
+  ];
+
+  var DEFAULT_MEMBERS = [
+    { name: 'Kuldeep Hindustani', role: 'Founder', bio: 'Founded Buland Awaaz Welfare Society on 2 October 2015 with the vision of creating a platform dedicated to education for the underprivileged, employment awareness and environmental protection. Under his leadership, the organization has focused on community engagement, awareness campaigns and sustainable environmental initiatives. His vision is a society where individuals and communities are empowered to become active participants in social development.', photo: 'images/members/kuldeep-hindustani.jpg' },
+    { name: 'Prinka Yadav', role: 'Vice President', bio: 'Smt. Prinka Yadav is associated with the organization\'s social development and community-oriented initiatives. She contributes towards strengthening outreach, awareness activities and organizational efforts aimed at creating meaningful social impact.', photo: 'images/members/prinka-yadav.jpg' }
+  ];
+
+  var DEFAULT_PROGRAMS = [
+    { title: 'Kapda Thaila Bank', kicker: 'Promoting Reusable. Reducing Plastic.', desc: 'A flagship initiative promoting the use of reusable cloth bags as an alternative to single-use plastic \u2014 encouraging citizens, shopkeepers, markets and institutions to adopt the habit of carrying and reusing cloth bags. Launched 14 Dec 2020 with the Municipal Corporation of Gurugram (MCG) \u2014 Haryana\'s first cloth bag bank. 35 women earn a livelihood stitching bags; 20+ lakh bags distributed, cutting an estimated 1 crore plastic bags.', objectives: 'Reduce the use of single-use plastic bags\nPromote reusable cloth bags\nEncourage sustainable shopping habits\nCreate awareness among consumers and retailers\nEncourage community participation in environmental protection', quote: 'To make carrying a reusable cloth bag a normal, responsible part of everyday life.' },
+    { title: 'Bio Carry Bags', kicker: 'Responsible Alternatives for a Sustainable Tomorrow', desc: 'Promoting environmentally responsible alternatives to conventional plastic carry bags \u2014 engaging retailers, businesses and consumers to make more responsible choices and reduce plastic pollution.', objectives: 'Promote sustainable carry-bag alternatives\nReduce dependence on conventional plastic bags\nEncourage responsible consumption\nCreate environmental awareness among businesses and consumers\nSupport the transition towards more sustainable practices', quote: 'Small changes in everyday choices can create a significant impact on our environment.' }
+  ];
+
+  var DEFAULT_GALLERY = [
+    { caption: 'Kapda Thaila Bank \u2014 cloth bag reuse mission', photo: '' },
+    { caption: 'Bio Carry Bags \u2014 sustainable alternatives mission', photo: '' },
+    { caption: 'Cloth bag vending machine, installed across Gurugram with MCG', photo: '' },
+    { caption: '35 women earning a livelihood stitching cloth bags at the Kapda Thaila Bank', photo: '' }
+  ];
+
+  var cmsCache = { events: [], members: [], programs: [], gallery: [] };
+  var firestoreReady = firebaseConfig.apiKey.indexOf('PASTE_') === -1;
+
+  // Tell the admin, right inside the panel, whether this site is live-synced yet
+  (function(){
+    var note = document.getElementById('adminSyncNote');
+    if(!note) return;
+    if(firestoreReady){
+      note.textContent = 'Connected \u2014 changes save to the server and appear for every visitor on the live site.';
+      note.style.color = 'var(--turmeric)';
+    } else {
+      note.textContent = 'Not connected yet \u2014 paste your Firebase config near the bottom of this file (see the FIREBASE SETUP comment) so changes save for everyone, not just this browser.';
+    }
+  })();
+
+  function seedIfEmpty(name, defaults){
+    db.collection(COLLECTIONS[name]).limit(1).get().then(function(snap){
+      if(snap.empty){
+        defaults.forEach(function(item){
+          db.collection(COLLECTIONS[name]).add(item);
+        });
+      }
+    }).catch(function(err){ console.error('seed error', name, err); });
+  }
+
+  function listenCollection(name, renderFn){
+    db.collection(COLLECTIONS[name]).orderBy(firebase.firestore.FieldPath.documentId()).onSnapshot(function(snap){
+      var data = [];
+      snap.forEach(function(doc){ data.push(Object.assign({ id: doc.id }, doc.data())); });
+      cmsCache[name] = data;
+      renderFn(data);
+      if(document.getElementById('adminMainView') && document.getElementById('adminMainView').style.display !== 'none'){
+        renderAdminLists();
+      }
+    }, function(err){ console.error('listen error', name, err); });
+  }
+
+  function renderEvents(data){
+    var el = document.getElementById('eventsList');
+    if(!el) return;
+    if(!data || data.length === 0){ el.innerHTML = '<p class="events-empty">No events added yet.</p>'; return; }
+    el.innerHTML = data.map(function(ev){
+      return '<div class="event-item"><div class="event-date">' + escapeHtml(ev.date) + '</div><div><h3>' + escapeHtml(ev.title) + '</h3><p>' + escapeHtml(ev.desc) + '</p></div></div>';
+    }).join('');
+  }
+
+  function renderMembers(data){
+    var el = document.getElementById('membersGrid');
+    if(!el) return;
+    el.innerHTML = (data || []).map(function(m){
+      var photoHtml = m.photo ? '<img src="' + m.photo + '" alt="' + escapeHtml(m.name) + '" class="lead-photo">' : '';
+      var cardClass = m.photo ? 'lead-card lead-card--photo' : 'lead-card';
+      return '<div class="' + cardClass + '">' + photoHtml +
+        '<div><span class="lead-role">' + escapeHtml(m.role) + '</span><h3>' + escapeHtml(m.name) + '</h3>' +
+        '<p class="lead-org">' + escapeHtml(m.role) + ', Buland Awaaz Welfare Society</p>' +
+        '<p>' + escapeHtml(m.bio) + '</p></div></div>';
+    }).join('');
+  }
+
+  function renderPrograms(data){
+    var el = document.getElementById('programsGrid');
+    if(!el) return;
+    el.innerHTML = (data || []).map(function(p, idx){
+      var objs = (p.objectives || '').split('\n').filter(function(o){ return o.trim(); });
+      var liHtml = objs.map(function(o){ return '<li>' + escapeHtml(o) + '</li>'; }).join('');
+      return '<div class="program-card"><span class="program-num">' + String(idx+1).padStart(2,'0') + ' / GREEN INITIATIVE</span>' +
+        '<h3>' + escapeHtml(p.title) + '</h3>' +
+        '<p class="program-kicker">' + escapeHtml(p.kicker) + '</p>' +
+        '<p>' + escapeHtml(p.desc) + '</p>' +
+        '<ul>' + liHtml + '</ul>' +
+        '<p class="program-quote">' + escapeHtml(p.quote) + '</p></div>';
+    }).join('');
+  }
+
+  var MISSION_ICONS = [
+    '<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect x="55" y="70" width="90" height="100" rx="6" fill="none" stroke="var(--forest)" stroke-width="4"/><path d="M75 70 V50 Q75 30 100 30 Q125 30 125 50 V70" fill="none" stroke="var(--forest)" stroke-width="4"/><path d="M55 95 H145" stroke="var(--turmeric)" stroke-width="3"/><path d="M80 130 Q100 115 120 130 Q100 145 80 130 Z" fill="none" stroke="var(--forest)" stroke-width="3"/></svg>',
+    '<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M100 40 C60 60 50 100 60 140 C70 165 130 165 140 140 C150 100 140 60 100 40 Z" fill="none" stroke="var(--forest)" stroke-width="4"/><path d="M100 55 V150" stroke="var(--turmeric)" stroke-width="3"/><path d="M75 90 Q100 105 125 90" fill="none" stroke="var(--forest)" stroke-width="3"/><path d="M70 120 Q100 135 130 120" fill="none" stroke="var(--forest)" stroke-width="3"/></svg>',
+    '<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect x="60" y="50" width="80" height="120" rx="6" fill="none" stroke="var(--forest)" stroke-width="4"/><rect x="75" y="65" width="50" height="35" rx="3" fill="none" stroke="var(--turmeric)" stroke-width="3"/><circle cx="100" cy="130" r="14" fill="none" stroke="var(--forest)" stroke-width="3"/><path d="M100 122 V138 M92 130 H108" stroke="var(--turmeric)" stroke-width="3"/><path d="M75 155 H125" stroke="var(--forest)" stroke-width="3"/></svg>',
+    '<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="60" r="16" fill="none" stroke="var(--forest)" stroke-width="4"/><path d="M45 110 Q45 80 70 80 Q95 80 95 110 V130 H45 Z" fill="none" stroke="var(--forest)" stroke-width="4"/><circle cx="135" cy="60" r="16" fill="none" stroke="var(--turmeric)" stroke-width="4"/><path d="M110 110 Q110 80 135 80 Q160 80 160 110 V130 H110 Z" fill="none" stroke="var(--turmeric)" stroke-width="4"/><path d="M60 150 H140" stroke="var(--forest)" stroke-width="3" stroke-dasharray="4 5"/></svg>'
+  ];
+
+  function renderGallery(data){
+    var el = document.getElementById('galleryGrid');
+    if(!el) return;
+    el.innerHTML = (data || []).map(function(g, idx){
+      var media = g.photo ? '<img src="' + g.photo + '" alt="' + escapeHtml(g.caption) + '">' : '<div class="mission-visual">' + MISSION_ICONS[idx % MISSION_ICONS.length] + '</div>';
+      return '<figure class="gallery-item">' + media + '<figcaption>' + escapeHtml(g.caption) + '</figcaption></figure>';
+    }).join('');
+  }
+
+  function escapeHtml(str){
+    if(!str) return '';
+    return String(str).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  if(firestoreReady){
+    seedIfEmpty('events', DEFAULT_EVENTS);
+    seedIfEmpty('members', DEFAULT_MEMBERS);
+    seedIfEmpty('programs', DEFAULT_PROGRAMS);
+    seedIfEmpty('gallery', DEFAULT_GALLERY);
+    listenCollection('events', renderEvents);
+    listenCollection('members', renderMembers);
+    listenCollection('programs', renderPrograms);
+    listenCollection('gallery', renderGallery);
+  } else {
+    // Firebase config not filled in yet -> show default content so the site still works
+    renderEvents(DEFAULT_EVENTS);
+    renderMembers(DEFAULT_MEMBERS);
+    renderPrograms(DEFAULT_PROGRAMS);
+    renderGallery(DEFAULT_GALLERY);
+    console.warn('Firebase config not set. Admin changes will not be saved. See firebaseConfig in the HTML.');
+  }
+
+  // ---------- Admin panel wiring ----------
+  var adminOverlay = document.getElementById('adminOverlay');
+  var adminTrigger = document.getElementById('adminTrigger');
+  var adminClose = document.getElementById('adminClose');
+  var adminLoginView = document.getElementById('adminLoginView');
+  var adminMainView = document.getElementById('adminMainView');
+  var adminEmailInput = document.getElementById('adminEmailInput');
+  var adminPwInput = document.getElementById('adminPwInput');
+  var adminPwSubmit = document.getElementById('adminPwSubmit');
+  var adminPwError = document.getElementById('adminPwError');
+  var adminLogout = document.getElementById('adminLogout');
+
+  if(adminTrigger){
+    adminTrigger.addEventListener('click', function(){
+      adminOverlay.classList.add('open');
+      var isIn = auth.currentUser !== null;
+      adminLoginView.style.display = isIn ? 'none' : 'block';
+      adminMainView.style.display = isIn ? 'block' : 'none';
+      if(isIn) renderAdminLists();
+    });
+  }
+  if(adminClose){
+    adminClose.addEventListener('click', function(){ adminOverlay.classList.remove('open'); });
+  }
+  if(adminOverlay){
+    adminOverlay.addEventListener('click', function(e){
+      if(e.target === adminOverlay) adminOverlay.classList.remove('open');
+    });
+  }
+  if(adminPwSubmit){
+    adminPwSubmit.addEventListener('click', function(){
+      if(!firestoreReady){
+        adminPwError.textContent = 'Firebase is not configured yet \u2014 see setup instructions.';
+        return;
+      }
+      var email = adminEmailInput.value.trim();
+      var pw = adminPwInput.value;
+      adminPwError.textContent = '';
+      auth.signInWithEmailAndPassword(email, pw).then(function(){
+        adminLoginView.style.display = 'none';
+        adminMainView.style.display = 'block';
+        renderAdminLists();
+      }).catch(function(err){
+        adminPwError.textContent = 'Login failed: ' + err.message;
+      });
+    });
+  }
+  if(adminLogout){
+    adminLogout.addEventListener('click', function(){
+      auth.signOut();
+      adminOverlay.classList.remove('open');
+    });
+  }
+
+  var adminTabs = document.querySelectorAll('.admin-tab');
+  adminTabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      adminTabs.forEach(function(t){ t.classList.remove('active'); });
+      tab.classList.add('active');
+      document.querySelectorAll('.admin-section').forEach(function(s){ s.classList.remove('active'); });
+      document.getElementById('admin' + tab.dataset.tab.charAt(0).toUpperCase() + tab.dataset.tab.slice(1)).classList.add('active');
+    });
+  });
+
+  function readFileAsDataUrl(fileInput, cb){
+    if(!fileInput.files || !fileInput.files[0]){ cb(''); return; }
+    var reader = new FileReader();
+    reader.onload = function(e){ cb(e.target.result); };
+    reader.readAsDataURL(fileInput.files[0]);
+  }
+
+  function renderAdminLists(){
+    document.getElementById('adminEventsList').innerHTML = cmsCache.events.map(function(ev){
+      return '<div class="admin-list-item"><div><span class="name">' + escapeHtml(ev.title) + '</span><span class="meta">' + escapeHtml(ev.date) + '</span></div><button class="admin-del" data-type="events" data-id="' + ev.id + '">Remove</button></div>';
+    }).join('') || '<p class="admin-note">No events yet.</p>';
+
+    document.getElementById('adminMembersList').innerHTML = cmsCache.members.map(function(m){
+      return '<div class="admin-list-item"><div><span class="name">' + escapeHtml(m.name) + '</span><span class="meta">' + escapeHtml(m.role) + '</span></div><button class="admin-del" data-type="members" data-id="' + m.id + '">Remove</button></div>';
+    }).join('') || '<p class="admin-note">No members yet.</p>';
+
+    document.getElementById('adminProgramsList').innerHTML = cmsCache.programs.map(function(p){
+      return '<div class="admin-list-item"><div><span class="name">' + escapeHtml(p.title) + '</span><span class="meta">' + escapeHtml(p.kicker) + '</span></div><button class="admin-del" data-type="programs" data-id="' + p.id + '">Remove</button></div>';
+    }).join('') || '<p class="admin-note">No programs yet.</p>';
+
+    document.getElementById('adminGalleryList').innerHTML = cmsCache.gallery.map(function(g){
+      return '<div class="admin-list-item"><div><span class="name">' + escapeHtml(g.caption) + '</span></div><button class="admin-del" data-type="gallery" data-id="' + g.id + '">Remove</button></div>';
+    }).join('') || '<p class="admin-note">No gallery items yet.</p>';
+
+    document.querySelectorAll('.admin-del').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var type = btn.dataset.type, id = btn.dataset.id;
+        db.collection(COLLECTIONS[type]).doc(id).delete().catch(function(err){ alert('Delete failed: ' + err.message); });
+      });
+    });
+  }
+
+  var evAdd = document.getElementById('evAdd');
+  if(evAdd){
+    evAdd.addEventListener('click', function(){
+      var date = document.getElementById('evDate').value.trim();
+      var title = document.getElementById('evTitle').value.trim();
+      var desc = document.getElementById('evDesc').value.trim();
+      if(!title) return;
+      db.collection(COLLECTIONS.events).add({ date: date, title: title, desc: desc }).then(function(){
+        document.getElementById('evDate').value = '';
+        document.getElementById('evTitle').value = '';
+        document.getElementById('evDesc').value = '';
+      }).catch(function(err){ alert('Add failed: ' + err.message); });
+    });
+  }
+
+  var mAdd = document.getElementById('mAdd');
+  if(mAdd){
+    mAdd.addEventListener('click', function(){
+      var name = document.getElementById('mName').value.trim();
+      var role = document.getElementById('mRole').value.trim();
+      var bio = document.getElementById('mBio').value.trim();
+      if(!name) return;
+      readFileAsDataUrl(document.getElementById('mPhoto'), function(photo){
+        db.collection(COLLECTIONS.members).add({ name: name, role: role, bio: bio, photo: photo }).then(function(){
+          document.getElementById('mName').value = '';
+          document.getElementById('mRole').value = '';
+          document.getElementById('mBio').value = '';
+          document.getElementById('mPhoto').value = '';
+        }).catch(function(err){ alert('Add failed: ' + err.message); });
+      });
+    });
+  }
+
+  var pAdd = document.getElementById('pAdd');
+  if(pAdd){
+    pAdd.addEventListener('click', function(){
+      var title = document.getElementById('pTitle').value.trim();
+      var kicker = document.getElementById('pKicker').value.trim();
+      var desc = document.getElementById('pDesc').value.trim();
+      var objectives = document.getElementById('pObjectives').value.trim();
+      var quote = document.getElementById('pQuote').value.trim();
+      if(!title) return;
+      db.collection(COLLECTIONS.programs).add({ title: title, kicker: kicker, desc: desc, objectives: objectives, quote: quote }).then(function(){
+        document.getElementById('pTitle').value = '';
+        document.getElementById('pKicker').value = '';
+        document.getElementById('pDesc').value = '';
+        document.getElementById('pObjectives').value = '';
+        document.getElementById('pQuote').value = '';
+      }).catch(function(err){ alert('Add failed: ' + err.message); });
+    });
+  }
+
+  var gAdd = document.getElementById('gAdd');
+  if(gAdd){
+    gAdd.addEventListener('click', function(){
+      var caption = document.getElementById('gCaption').value.trim();
+      if(!caption) return;
+      readFileAsDataUrl(document.getElementById('gPhoto'), function(photo){
+        db.collection(COLLECTIONS.gallery).add({ caption: caption, photo: photo }).then(function(){
+          document.getElementById('gCaption').value = '';
+          document.getElementById('gPhoto').value = '';
+        }).catch(function(err){ alert('Add failed: ' + err.message); });
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
