@@ -1278,7 +1278,7 @@
     el.innerHTML = (data || []).map(function(p, idx){
       var objs = (p.objectives || '').split('\n').filter(function(o){ return o.trim(); });
       var liHtml = objs.map(function(o){ return '<li>' + escapeHtml(o) + '</li>'; }).join('');
-      return '<div class="program-card">
+      return '<div class="program-card">' +
         '<h3>' + escapeHtml(p.title) + '</h3>' +
         '<p class="program-kicker">' + escapeHtml(p.kicker) + '</p>' +
         '<p>' + escapeHtml(p.desc) + '</p>' +
